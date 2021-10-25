@@ -37,7 +37,7 @@ class Example extends React.Component {
 
 Note how *we have to duplicate the code between these two lifecycle methods in class*
 
-This is because in may cases we want to perform the same side effect regardless of whether the component just mounted, or if it has been updated. Conceptually, we want it to happen after every render - but React class components don't have a method like this. 
+This is because in May cases we want to perform the same side effect regardless of whether the component just mounted, or if it has been updated. Conceptually, we want it to happen after every render - but React class components don't have a method like this. 
 
 ### Example using Hooks
 Let's consider the following
