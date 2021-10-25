@@ -1,8 +1,9 @@
+## React Hooks
 In React class components, the *render* method itself shouldn't cause side effects. It would be too early - we typically want to perform our effects after React has updated the DOM. This is why in React classes, we put side effects into the following methods
 
-***componentDidMount*** is called just after component is rendered
+**componentDidMount** is called just after component is rendered
 
-***componentDidUpdate*** is called just after component is re-rendered
+**componentDidUpdate** is called just after component is re-rendered
 
 Date fetching, setting up a subscription, and manually changing the DOM in React components are all example of *side effects*
 
