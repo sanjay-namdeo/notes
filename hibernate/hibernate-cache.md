@@ -87,3 +87,13 @@ public class HibernateCacheExample {
 
 }
 ```
+
+### Second Level Cache
+Second-level cache is SessionFactory-scoped, meaning it is shared by all sessions created with the same session factory. 
+
+When an entity instance is looked up by its id (either by application logic or by Hibernate internally, e.g. when it loads associations to that entity from other entities), and if second-level caching is enabled for that entity, the following happens:
+1. If an instance is already present in the first-level cache, it is returned from there
+2. If an instance is not found in the first-level cache, and the corresponding instance state is cached in the second-level cache, then the data is fetched from there and an instance is assembled and returned.
+Otherwise, the necessary data are loaded from the database and an instance is assembled and returned
+
+> Once the instance is stored in first-level cache, it is returned from there in all subsequent calls within the same session until the session is closed or the instance is manually evicted from the persistence context. Also, the loaded instance state is stored in L2 cache if it was not there already.
