@@ -8,6 +8,8 @@ Collection of notes based on the following-
 6. Database
 7. Performance
 8. JavaScript
+9. Angular
+10. Hibernate
 
 These notes will be kept updated and maintained.
 
