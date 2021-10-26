@@ -7,6 +7,7 @@ Collection of notes based on the following-
 5. Design Patterns
 6. Database
 7. Performance
+8. JavaScript
 
 These notes will be kept updated and maintained.
 
