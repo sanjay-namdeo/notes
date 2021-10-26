@@ -39,3 +39,5 @@ This attribute is used to specify what character will be used in padding operati
 
 ## empty-value 
 When a bit value is fully trimmed, it will result in an empty string value. By specifying this attribute, you can replace the empty string value with any other values you want. For example, you specify empty-value="abcd" in iso field number 4. If field number 4 is activated and has an empty string, the field number 4 will have value abcd instead of an empty string.
+
+#### Reference [nucleus8583](https://github.com/robbik/nucleus8583/blob/master/wiki/Manual.wiki)
