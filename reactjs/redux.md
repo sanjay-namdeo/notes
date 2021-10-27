@@ -1,15 +1,15 @@
 ## React Redux
-Redux is a predicatable state container for JavaScript apps.
+Redux is a predictable state container for JavaScript apps.
 
-Let's consider you want to withdraw money from bank. You will have in your mind an action to withdraw money. Banks have a vault which stores cash. You cannot directly go to vault and withdraw money. Instead you will go to cashier, who will take your action request and then go to vault bring the cash and give it you. After this, vault amount will be updated.
+Let's consider you want to withdraw money from bank. You will have in your mind an action to withdraw money. Banks have a vault which stores cash. You cannot directly go to vault and withdraw money. Instead, you will go to cashier, who will take your action request and then go to vault bring the cash and give it you. After this, vault amount will be updated.
 
 **Redux Store** is like a bank's vault. It holds state of the application.
 **Action** the only way to change the state is to dispatch an action, an object describing what happened. Consider below example. Here type represents action and amount represents payload.
-```javascript
+```json
 {
-  type: "WITHDRAW_MONEY",
-  payload: {
-    amount: 1000
+  "type": "WITHDRAW_MONEY",
+  "payload": {
+    "amount": 1000
   }
 }
 ```

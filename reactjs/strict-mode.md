@@ -16,4 +16,4 @@ componentWillMount: Please update the following components to use ComponentDidMo
 2. **Warning  about legacy string ref API usage**
 
 3. **Warning about deprecated findDOMNode usage**
-   React used to support findDOMNode to search tree fr a DOM node given a class instance. Normally you don't need this because you can /attach a ref directly to a DOM node/
+   React used to support findDOMNode to search tree for a DOM node given a class instance. Normally you don't need this because you can /attach a ref directly to a DOM node/

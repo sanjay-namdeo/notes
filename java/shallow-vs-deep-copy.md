@@ -2,7 +2,7 @@
 ### Reference Copy
 Creates a copy of a reference variable pointing to an object.
 
-When a reference is copied, then both existing and copied variable starts pointint to the same object.
+When a reference is copied, then both existing and copied variable starts pointing to the same object.
 > An object copy creates a copy of object itself
 
 ### Object Copy

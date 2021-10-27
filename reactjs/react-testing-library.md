@@ -1,5 +1,5 @@
 ## React Testing Library
-Enzyme gives React developers utilities to test internals of React components, React Testing Library takes a step back and questions us "how to test React components to get full confidence in our React components": **Rather than testing a component's implementation details, React Testing Library puts the developer in the shoes of an end user of an React application.**
+Enzyme gives React developers utilities to test internals of React components, React Testing Library takes a step back and questions us "how to test React components to get full confidence in our React components": **Rather than testing a component's implementation details, React Testing Library puts the developer in the shoes of an end user of a React application.**
 
 1. React Testing Library is not an alternative to Jest . **Jest** is a test runner.
 2. It comes default in create-react-app. If you are not using create-react-app, then you need to install it
@@ -8,7 +8,7 @@ Enzyme gives React developers utilities to test internals of React components, R
 React Testing Library is an alternative to Enzyme. While Enzyme lets us test the implementation details of React components, React Testing Library helps us test the behavior of our React components from the perspective of the users that will use our app.
 
 ### Writing our First Test
-Before we begin our testing, we need to have a React component that we can test. Lets create a simple React component.
+Before we begin our testing, we need to have a React component that we can test. Let's create a simple React component.
 
 ```javascript
 import React from 'react';
@@ -27,7 +27,7 @@ We will write our tests in a separate file, named App.test.js.
 
 Notice the **.test.js in the file name. Jest will **automatically detect** any files with the name ending with test.js.
 
-So lets write our first test. In our first test, we will test whether the h1 element in our App component is rendered in the DOM or not.
+So let's write our first test. In our first test, we will test whether the h1 element in our App component is rendered in the DOM or not.
 
 ```javascript
 import React from 'react';
@@ -40,7 +40,7 @@ test('render h1 element', () => {
 });
 ```
 
-Lets understand the code of our first test.
+Let's understand the code of our first test.
 At the top, we have import statements. First we import React, then we **import two main things** from React Testing Library:
 
 1. A **render** function that will be used to render the component which we will be testing
@@ -61,13 +61,13 @@ npm test
 npm run test
 ```
 
-If you didn’t use create-react-app to create a React project, you will need to have a test script in the package.json file before you run the test command.
+If you did not use create-react-app to create a React project, you will need to have a test script in the package.json file before you run the test command.
 
 When you run the test command, you will see the output in the terminal that will indicate whether our test has **passed or failed**.
 
 To see the HTML output of your component, you could use a method named debug of the screen object.
 
-Lets make a slight modification in our first test
+Let's make a slight modification in our first test
 ```javascript
 test('render h1 element', () => {
   render(<App />);
@@ -129,7 +129,7 @@ Surely you see a pattern here. Other categories have similar methods.
 To learn all about the individual methods, check the official docs and API reference, for example for getByText.
 
 ### Selecting Elements using the id Attribute
-If none of the above mentioned query methods allows you to select any particular element, you could add a **/data-testid/** attribute on the element that you want to select and then select that element using /getByTestId/ function.
+If none of the above-mentioned query methods allows you to select any particular element, you could add a **/data-testid/** attribute on the element that you want to select and then select that element using /getByTestId/ function.
 Example:
 
 ```<span data-testid="mySpan">Hello</span>```
@@ -170,9 +170,9 @@ Now lets take a look at the differences between different query categories:
 /**findAllBy:**/ Query methods in this category return a promise which resolves to an array of elements when any elements are found which match the given query. The promise is rejected if no elements are found after a default timeout of 1000ms
 
 ### When To Use Which Query Variant
-Just in case its not clear from the above description, if you want to select an element that is rendered after an asynchronous operation, use the findBy** or findByAll** variants.
+Just in case it's not clear from the above description, if you want to select an element that is rendered after an asynchronous operation, use the findBy** or findByAll** variants.
 
-If you want to assert that some element should not be in the DOM, use queryBy** or queryByAll** variants. Otherwise use getBy** and getByAll** variants.
+If you want to assert that some element should not be in the DOM, use queryBy** or queryByAll** variants. Otherwise, use getBy** and getByAll** variants.
 
 ### Assertive Functions
 In our first test written above, we used a method named toBeInTheDocument to check if the h1 element was in the DOM or not. This is an assertive function that is used on the right side of an assertion.
@@ -218,7 +218,7 @@ After the above theory, lets write some more tests.
 
 ###Testing Multiple Elements
 We saw above that there are query categories that allow us to select multiple elements.
-Lets write a test to check if there is a specific number of list items in an ul element.
+Let's write a test to check if there is a specific number of list items in an ul element.
 Before we write the test, we need to change out App component
 
 ```javascript
@@ -237,7 +237,7 @@ function App() {
 }
 ```
 
-Now our component renders a list of animals and we will write a test to assert the following:
+Now our component renders a list of animals, and we will write a test to assert the following:
 1. The ul element should be in the document.
 2. The ul element should have a class named animals.
    3.There should be exactly 5 list items in the ul element.
@@ -265,7 +265,7 @@ Notice the assertive functions used in the assertions in the above test:
 **toBeInTheDocument** and **toHaveClass** are from /jest-dom/, whereas /toEqual/ is from Jest itself.
 
 ###Asynchronous Tests
-Now lets write a test that will test whether a certain component is rendered after an asynchronous request to /jsonplaceholder/ api to fetch a single user.
+Now let's write a test that will test whether a certain component is rendered after an asynchronous request to `jsonplaceholder` api to fetch a single user.
 
 Before we write the test, lets change our App component and also create a User component that will be rendered once the user has been fetched from the API.
 
@@ -329,12 +329,12 @@ documentation which covers mocking in detail.
 
 When we render the App component, our component will now use the mocked version of the fetch function.
 
-Now lets write some tests. Instead of writing one test, we will write three tests to assert the following:
+Now let's write some tests. Instead of writing one test, we will write three tests to assert the following:
 1. While the request is in progress, a loading text should be visible.
-2. Therafter, the user’s name should be rendered in the document.
+2. Thereafter, the user’s name should be rendered in the document.
 3. In case of an error, an error message should be rendered.
 
-Lets write our tests one by one.
+Let's write our tests one by one.
 The first test will be related to the loading text.
 ```javascript
 import {
@@ -360,15 +360,15 @@ A couple of things that should be noted in the above test:
 When testing components that contain an asynchronous operation, like an API request in our App component, you might see a warning message which says
 Warning: An update to App inside a test was not wrapped in act(…)
 
-This warning means that something happened to our component when we weren’t expecting anything to happen. For details on this warning, the following blog post by the creator of React Testing Library might be interesting: Fix the “not wrapped in act(…)” warning.
+This warning means that something happened to our component when we were not expecting anything to happen. For details on this warning, the following blog post by the creator of React Testing Library might be interesting: Fix the “not wrapped in act(…)” warning.
 
 In our case, we get this warning because after we assert that the loading text should be in the document, our component’s state is updated and the component is re-rendered. Our promise (in the fake fetch method) does resolve instantly after all.
 
 We can avoid this warning by waiting for the component to re-render, after the API request, before ending our test. To wait for a component to re-render, we have used the waitForElementToBeRemoved function. This function will not let our test finish until the loading text has disappeared from the DOM, which only happens in case of an error or a successful API request.
 
-The waitForElementToBeRemoved function returns a Promise so we need to await it. And in order to use the await keyword, we have used an async function.
+The waitForElementToBeRemoved function returns a Promise, so we need to await it. And in order to use the await keyword, we have used an async function.
 
-Now lets write the second test to assert that user is successfully fetched and the user’s name is rendered in the DOM.
+Now let's write the second test to assert that user is successfully fetched and the user’s name is rendered in the DOM.
 
 ```javascript
 test("user's name is rendered", async () => {
@@ -386,7 +386,7 @@ Also notice the use of findByText: We are using this query method because query 
 
 We can’t use queryBy** or getBy** variants here. We also need to await the result of screen.findByText("Jack"), so we used an async function.
 
-Now lets write our final asynchronous test which will assert that in case of an error, our App component shows an error message.
+Now let's write our final asynchronous test which will assert that in case of an error, our App component shows an error message.
 
 ```javascript
 test('error message is shown', async () => {
@@ -401,11 +401,11 @@ test('error message is shown', async () => {
 });
 ```
 
-The only thing to be noticed here is that we are using a different version of our mocked fetch function. This is needed because our initial mocked version of the fetch function doesn’t reject the Promise.
+The only thing to be noticed here is that we are using a different version of our mocked fetch function. This is needed because our initial mocked version of the fetch function does not reject the Promise.
 
-So to force our API request to fail, we reject the Promise with an object containing a message property.
+So to force our API requests to fail, we reject the Promise with an object containing a message property.
 
-The value of this message property is saved in the state of our App component and displayed to the user when our API request fails. Hence we’re checking for this message with findByText("API is down").
+The value of this message property is saved in the state of our App component and displayed to the user when our API request fails. Hence, we’re checking for this message with findByText("API is down").
 
 ### Grouping Tests in a Test Suite
 We wrote three tests to test our App component that contains asynchronous code. When we run our tests, there is no indication on the terminal that these three tests are related to each other.
@@ -536,7 +536,7 @@ The first test checks if the counter is incremented correctly by simulating a cl
 That is what we are checking in our assertion.
 Note that we have passed a string "2" to the toEqual function instead of a number 2. The reason is that we are using the textContent property of an HTML element to get the value of the counter.
 
-Since the textContent property always yields a string, we could either convert the return value of counter.textContent to a number and then assert that it should be equal to 2 or we could just use a string "2".
+Since the textContent property always yields a string, we could either convert the return value of counter.textContent to a number and then assert that it should be equal to 2, or we could just use a string "2".
 
 In the second test, we are testing the decrement functionality by clicking the decrement button twice and asserting that counter’s value should be “-2”.
 
@@ -554,7 +554,7 @@ And a callback function which will be used to handle the onChange event on the i
 In addition, this input element is a controlled, meaning its value is derived from the state of the component in which it is rendered.
 Now you want to test whether the value of the input element is updated correctly and also make sure that the callback function is called each time the value of the input changes.
 
-We will write a couple of tests for this case but before we do that, lets create an Input component and also render this Input component in the App component, passing in the required props from the App component to the Input component.
+We will write a couple of tests for this case, but before we do that, lets create an Input component and also render this Input component in the App component, passing in the required props from the App component to the Input component.
 
 Input component
 ```javascript
@@ -580,7 +580,7 @@ function App() {
 }
 ```
 
-Now lets write our tests.
+Now let's write our tests.
 In the first test, we will assert that the input value is updated correctly.
 
 ```javascript
@@ -600,7 +600,7 @@ We are selecting the input element by its role. What’s great about the getByRo
 
 After selecting the input element, we are using the user-event API to trigger an onChange event on the input element. Since we wrote "React" in the input component, we expect its value to be "React".
 
-For our second test, we will test whether or not the handleChange callback function is called every time input value is changed.
+For our second test, we will test whether the handleChange callback function is called every time input value is changed.
 
 To test this, we will mock the handleChange function which is passed to the Input component so that we can track how many times it was called. And instead of rendering the App component, we will render the Input component, passing in the mocked version of the handleChange function.
 

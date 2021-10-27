@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export lass TestComponent implements OnInit {
+export class TestComponent implements OnInit {
 
   constructor() {}
 
@@ -36,7 +36,7 @@ export lass TestComponent implements OnInit {
 As we can see in the above image, our component is defined with @Component decorator.
 
 ### Modules
-A module is a place where we can group components, directives, services, and pipes. Module decides whether the components, directives, etc can be used by other modules, by exporting or hiding these elements. Every module is defined with a @NgModule decorator.
+A module is a place where we can group components, directives, services, and pipes. Module decides whether the components, directives, etc. can be used by other modules, by exporting or hiding these elements. Every module is defined with a @NgModule decorator.
 By default, modules are of two types:
 1. Root Module
 2. Feature Module
@@ -69,7 +69,7 @@ As one can see, CommonModule is imported since this is a feature module.
 
 ### Services
 Services are objects which get instantiated only once during the lifetime of an application. The main objective of a service is to share data, functions with different components of an Angular application.
-A service is defined using a @Injectable decorator. A function defined inside a service can be invoked from any component or directive.
+A service is defined using an @Injectable decorator. A function defined inside a service can be invoked from any component or directive.
 
 To create a service, run the following command:
 ```bash

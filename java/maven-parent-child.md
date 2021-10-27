@@ -8,7 +8,7 @@ A parent POM can be *declared with packaging pom*. It is not meant to be distrib
 Maven parent pom can contain almost everything and those can be inherited into child pom files for example:
 1. Common data - Developer's name, SCM address, distribution management etc.
 2. Constants - Such as version numbers
-3. Common dependencies - Common to all child. It has same effect as writing them several times in individual pom files.
+3. Common dependencies - Common to all child. It has the same effect as writing them several times in individual pom files.
 4. Properties - For example plugins, declarations, executions and IDs.
 5. Configurations
 6. Resources

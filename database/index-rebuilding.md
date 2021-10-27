@@ -5,7 +5,7 @@ The SQL Server database engine automatically maintains indexes whenever insert, 
 
 > You can remedy index fragmentation by reorganizing or rebuilding an index. **Rebuilding an index drops and re-creates the index**. This removes fragmentation, reclaims disk space by compacting the pages based on the specified or existing fill factory settings, and reorders the index rows in contiguous pages.
 
-When ALL is specified, all the indexes on the table are dropped and rebuilt in a single transaction. Reorganizing an index uses minimal system resources. It defragments the leaf level of clustered and nonclustered indexes on tables and views by physically reordering the leaf-level pages to match the logical, left to right, order of the leaf nodes. Reorganizing also compacts the index pages. Compaction is based on the existing fill factor value.
+When ALL is specified, all the indexes on the table are dropped and rebuilt in a single transaction. Reorganizing an index uses minimal system resources. It de-fragments the leaf level of clustered and non-clustered indexes on tables and views by physically reordering the leaf-level pages to match the logical, left to right, order of the leaf nodes. Reorganizing also compacts the index pages. Compaction is based on the existing fill factor value.
 
 ### Reorganize
 **Reorganize is a light-weight** the process which goes through the existing index and cleans it up. It is a cleanup operation that leaves the system as it is without locking out affect tables and views. The organizing index is much better from an efficiency standpoint.

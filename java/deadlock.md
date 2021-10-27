@@ -9,27 +9,31 @@ When two or more threads are waiting for each other to release the lock and get 
 ### Deadlock situation
 This method request two locks, first String and then Integer
 ```java
-public void method1() {
-   synchronized(String.class) {
-      sout("Acquired lock on String.class object");
+public class Scratch {
+    public void method1() {
+        synchronized (String.class) {
+            sout("Acquired lock on String.class object");
 
-         synchronized(Integer.class) {
-            sout("Acquired lock on Integer.class object");
-         }
-   }
+            synchronized (Integer.class) {
+                sout("Acquired lock on Integer.class object");
+            }
+        }
+    }
 }
 ```
 
-This method also requests the same two locks but in exactly opposite order i.e. first Integer and then String. This creates potential deadlock if one thread holds String lock and the other holds Integer lock and they wait for each other, forever.
+This method also requests the same two locks but in exactly opposite order i.e. first Integer and then String. This creates potential deadlock if one thread holds String lock and the other holds Integer lock, and they wait for each other, forever.
 ```java
-public void method2() {
-   synchronized(Integer.class) {
-      sout("Acquired lock on Integer.class");
+public class Scratch {
+    public void method2() {
+        synchronized (Integer.class) {
+            sout("Acquired lock on Integer.class");
 
-      synchronized(String.class) {
-         sout("Acquired lock on String.class");
-      }
-   }
+            synchronized (String.class) {
+                sout("Acquired lock on String.class");
+            }
+        }
+    }
 }
 ```
 
@@ -39,24 +43,26 @@ If method1() and method2() both will be called by two or more threads, there is 
 If you have looked above code carefully, then we may have figured out that the real reason for the deadlock is the way they are requesting locks if we provide ordered access, then the problem will be resolved.
 
 ```java
-public void method1() {
-   synchronized(Integer.class) {
-      sout("Acquired lock on Integer.class object");
+public class Scratch {
+    public void method1() {
+        synchronized (Integer.class) {
+            sout("Acquired lock on Integer.class object");
 
-      synchronized(String.class) {
-         sout("Acquired lock on String.class object");
-      }
-   }
-}
+            synchronized (String.class) {
+                sout("Acquired lock on String.class object");
+            }
+        }
+    }
 
-public void method2() {
-   synchronized(Integer.class) {
-      sout("Acquired lock on Integer.class object");
+    public void method2() {
+        synchronized (Integer.class) {
+            sout("Acquired lock on Integer.class object");
 
-      synchronized(String.class) {
-         sout("Acquired lock on String.class");
-      }
-   }
+            synchronized (String.class) {
+                sout("Acquired lock on String.class");
+            }
+        }
+    }
 }
 ```
 

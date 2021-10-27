@@ -1,6 +1,6 @@
 ## Actuator
 
-It helps you to **access the current state of an application that is running in a production environment**. Multiple metrics can be used to check the current state. They also provide endpoints for RESTful web services which can be simply used to check the different metrics.
+It helps you to **access the current state of an application that is running in a production environment**. Multiple metrics can be used to check the current state. They also provide endpoints for REST-ful web services which can be simply used to check the different metrics.
 
 1. Add **spring-boot-starter-actuator** dependency
 2. *curl* localhost:8080/actuator/health

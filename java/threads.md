@@ -23,14 +23,14 @@ class MyThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Running yeee");
+        System.out.println("Running yeh!");
     }
 }
 ```
 ## Lambda Expression
 By using a lambda expression, we can directly write the implementation for a method in Java.
 
-In the below program, we can create a thread by implementing the Runnable interface using lamda expression. While using the lambda expressions, we can skip the new Runnable() and run() method because the compiler knows that Thread object takes a Runnable object and that contains only one method run() that takes no argument.
+In the below program, we can create a thread by implementing the Runnable interface using lambda expression. While using the lambda expressions, we can skip the new Runnable() and run() method because the compiler knows that Thread object takes a Runnable object and that contains only one method run() that takes no argument.
 ```java
 public class LambdaThreadTest {
    public static void main(String[] args) {

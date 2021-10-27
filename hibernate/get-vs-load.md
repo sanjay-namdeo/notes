@@ -8,26 +8,28 @@
 
 ### load()
 ```java
-public void savePost(long authorId, String text) {
-    Post p = new Post();
-    p.setText(text);
+public class Scratch {
+    public void savePost(long authorId, String text) {
+        Post p = new Post();
+        p.setText(text);
 
-    // No SELECT query here. 
-    // Existence of Author is ensured by foreign key constraint on Post.
-    p.setAuthor(s.load(Author.class, authorId));
+        // No SELECT query here. 
+        // Existence of Author is ensured by foreign key constraint on Post.
+        p.setAuthor(s.load(Author.class, authorId));
 
-    s.save(p);
+        s.save(p);
+    }
 }
 ```
 
 ### get()
-if you are trying to load /get Empoyee object where empid=20. But assume record is not available in DB.
+if you are trying to load /get Employee object where empid=20. But assume record is not available in DB.
 ```java
-Employee employee1 = session.load(Employee.class,20);  //Step-1
+Employee employee1 = session.load(Employee.class ,20);  //Step-1
 system.out.println(employee1.getEmployeeId();       //Step-2  --o/p=20
 system.out.println(employee1.getEmployeeName();       //Step-3 -->O/P:ObjectNotFoundException
 ```
-If you use load in step-1 hibernate wont fire any select query to fetch employee record from DB at this moment.At this pint hibernate gives a dummy object ( Proxy ). This dummy object doesnt contain anything. it is new Employee(20). you can verify this in step-2 it will print 20. but in step-3 we are trying to find employee information. so at this time hibernate fires a sql query to fetch Empoyee objct. If it is not found in DB.throws ObjectNotFoundException.
+If you use load in step-1 hibernate won't fire any select query to fetch employee record from DB at this moment.At this pint hibernate gives a dummy object ( Proxy ). This dummy object doesn't contain anything. it is new Employee(20). you can verify this in step-2 it will print 20. but in step-3 we are trying to find employee information. so at this time hibernate fires a sql query to fetch Employee object. If it is not found in DB.throws ObjectNotFoundException.
 ```java
 Employee employee2 = session.get(Employee.class,20);  //Step-4
 ```

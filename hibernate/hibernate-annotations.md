@@ -2,7 +2,7 @@
 
 1. **javax.persistence.Entity** Used with Model classes to specify them as Entity beans
 2. **javax.persistence.Table** Used with Entity beans to define corresponding table names in database
-3. **javax.persistence.Access** Used to define the access type, either fields or property. Default valus is field and if you want hibernate to use getter/setter methods, then you need to set it to property. E.g. 
+3. **javax.persistence.Access** Used to define the access type, either fields or property. Default values is field and if you want that hibernate use getter/setter methods, then you need to set it to property. E.g. 
 @Access(value=AccessType.PROPERTY)
 4. **javax.persistence.Id** Used to define the primary key in the Entity bean.
 5. **javax.persistence.EmbeddedId** Used to define composite primary key in entity bean

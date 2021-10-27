@@ -2,7 +2,7 @@
 
 1. *XML Configuration* we can use bean element in context file to configure a Spring Bean.
 ```xml
-<bean name="myBean" class="com.test.MyBean "></Bean>
+<bean name="myBean" class="com.test.MyBean "/>
 ```
 2. *Java Based Configuration* In Configuration class annotated with @Configuration, you can configure a Spring bean using @Bean annotation.
 ```java

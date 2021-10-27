@@ -14,7 +14,7 @@ As soon as entity object is associated to a session, it becomes Persistent objec
 5. `session.persist`
 
 ### Detached State
-A detached entity is just an ordinary entity POJO whose identity value corresponds to a database row. The difference from a managed entity is that it's not tracked anymore by any persistence context.
+A detached entity is just an ordinary entity POJO whose identity value corresponds to a database row. The difference from a managed entity is that it's not tracked any more by any persistence context.
 
 An entity is in a deleted (removed) state if Session.delete(entity) has been called, and the Session has marked the entity for deletion. The DELETE command itself might be issued at the end of the unit of work.
 

@@ -3,7 +3,7 @@
 |Splice|Slice|
 |---|---|
 |The splice() method returns the removed item(s) in an array|The slice() method returns the selected element(s) in an array, as a new array object|
-|The splice() method changes the original array|The slice() method doesn’t change the original array|
+|The splice() method changes the original array|The slice() method does not change the original array|
 |The splice() method can take n number of arguments|The slice() method takes 2 arguments|
 
 > Note: Splice and Slice both are Javascript Array functions.

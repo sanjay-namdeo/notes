@@ -11,12 +11,12 @@ React uses**two virtual DOMs**to render the user interface. One of them is used 
 It has a gentle learning curve compared to frameworks like Angular. Anyone with little knowledge of javascript can start building web applications using React.
 
 ### Reusable Components
-React uses component-based architecture for developing applications. Components are indendent and reusable bits of code. These **components can be shared across various applications having similar functionality**. The re-use of components increases the pace of development.
+React uses component-based architecture for developing applications. Components are independent and reusable bits of code. These **components can be shared across various applications having similar functionality**. The re-use of components increases the pace of development.
 
 ### Huge ecosystem of libraries
-React provides freedome to choose the tools, libraries, and architecture for developing an application based on your requirements. For example
+React provides freedom to choose the tools, libraries, and architecture for developing an application based on your requirements. For example
 1. **Redux** library can be used for state management
 2. **Enzyme** for testing
 
 ### SEO Friendly (Search Engine Optimization)
-React allows developers to develop engaging user interfaces the can be easily navigated in various search engines. It allows server-side rendering, which boosts the SEO of an app.
+React allows developers to develop engaging user interfaces they can be easily navigated in various search engines. It allows server-side rendering, which boosts the SEO of an app.

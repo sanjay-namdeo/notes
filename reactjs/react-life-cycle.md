@@ -10,7 +10,7 @@
 1. **getDerivedStateFromProps** Called again when a component is being re-rendered.
 2. **shouldComponentUpdate** Called just before a component is re-rendered. Returns true by default. If returned false, then component will not be updated.
 3. **render** To re-render the component. Returns JSX.
-4. **getSnapshotBeforeUpdate** Called just before the newly rendered HTML gets commited to the DOM. It stores the previous state of the component so that React has an idea of what parts of the DOM needs to be updated.
+4. **getSnapshotBeforeUpdate** Called just before the newly rendered HTML gets committed to the DOM. It stores the previous state of the component so that React has an idea of what parts of the DOM needs to be updated.
 5. **componentDidUpdate** Called after the component is re-rendered.
 
 ###Unmount

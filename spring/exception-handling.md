@@ -2,7 +2,7 @@
 
 REST API developer will have two requirements related to error handling
 1. Common place for Error handling
-2. Similar Error Respone body with a proper HTTP status code across APIs
+2. Similar Error Response body with a proper HTTP status code across APIs
 
 >Both requirements can be addressed by using RestControllerAdvice annotation in Spring.
 
@@ -19,10 +19,7 @@ public class ExceptionAdvice {
 }
 ```
 
-We have added one method `handleGenericNotFoundException`, which handles exceptions defined with
-```java
-@ExceptionHandler(value = NotFoundException.class)
-```
+We have added one method `handleGenericNotFoundException`, which handles `NotFoundException`
 
 Any service generating exception `NotFoundException` will come to `handleGenericNotFoundException` method.
 

@@ -2,7 +2,7 @@
 Before hooks, functional components were called stateless components and were behind class components on feature basis. After introduction of Hooks, functional components are equivalent to class components.
 
 ### Declaration
-1. **Functional components** are simle JavaScript functions and therefore can be declared using **arrow function** OR **function** keyward:
+1. `Functional components` are simple JavaScript functions and therefore can be declared using **arrow function** OR **function** keyword:
 ```javascript
 function example(props) {
   return <div>Hello World!</div>;
@@ -11,7 +11,7 @@ function example(props) {
 const example = (props) => <div>Hello World!</div>;  
 ```
 
-2. **Class components** on the other hand, are declared using the ES6 class:
+2. `Class components` on the other hand, are declared using the ES6 class:
 ```javascript
 class Example extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ Let's render the following component with props and analyse how functional and c
 <StudentInfo name="Sanjay" rollNumber="23" />
 ```
 
-1. **Functional Component** pretty straight forward. Any prop provided as an argument to a functional component, can be directly used inside HTML elements.
+1. `Functional Component` pretty straight forward. Any prop provided as an argument to a functional component, can be directly used inside HTML elements.
 ```javascript
 function studentInfo(props) {
   return (
@@ -42,7 +42,7 @@ function studentInfo(props) {
 }
 ```
 
-2. **Class Components**
+2. `Class Components`
 ```javascript
 class StudentInfo extends React.Component {
   constructor(props) {
@@ -59,8 +59,8 @@ class StudentInfo extends React.Component {
 ```
 
 ### Handling State
-1. **Functional Component** use Hooks to handle state with **useState** hook to set state of a variable inside the component.
-   _ **useState** hook returns an array of two items, the first item contains the current state and the second item is a function used to update the cstate.
+1. `Functional Component` use Hooks to handle state with **useState** hook to set state of a variable inside the component.
+   _ **useState** hook returns an array of two items, the first item contains the current state and the second item is a function used to update the state.
    _ It takes a parameter which sets the initial state.
 
 ```javascript
@@ -75,7 +75,7 @@ function example(props) {
 } 
 ```
 
-2. **Class Component**
+2. `Class Component`
 ```javascript
 class Example extends React.Component {
   constructor(props) {

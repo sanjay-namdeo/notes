@@ -19,7 +19,7 @@ class MultiplyFun {
 ```
 
 ### Runtime
-Also known as Dynamic binding OR Dynamic method dispatch. Function calls to overriden method is resolved at Runtime.
+Also known as Dynamic binding OR Dynamic method dispatch. Function calls to overridden method is resolved at Runtime.
 
 ```java
 class Parent {

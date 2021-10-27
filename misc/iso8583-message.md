@@ -5,7 +5,7 @@ nucleus8583 provides API to read and write from/to ISO-8583 messages. Before usi
 Message factory is a set of rules defined how to perform conversion to/from ISO-8583 message. These rules are defined in specific XML format:
 
 ## encoding
-What type of encoding is used in the conversion. Currently only support ASCII.
+What type of encoding is used in the conversion. Currently, only support ASCII.
 
 ## iso-message
 It can have one or more iso-field tag
@@ -38,6 +38,6 @@ For example, means iso field number 4 has 12 character length and left aligned-
 This attribute is used to specify what character will be used in padding operations. This attribute only allows one character of the string. The padding operation itself has been explained in the align attribute above.
 
 ## empty-value 
-When a bit value is fully trimmed, it will result in an empty string value. By specifying this attribute, you can replace the empty string value with any other values you want. For example, you specify empty-value="abcd" in iso field number 4. If field number 4 is activated and has an empty string, the field number 4 will have value abcd instead of an empty string.
+When a bit of value is fully trimmed, it will result in an empty string value. By specifying this attribute, you can replace the empty string value with any other values you want. For example, you specify `empty-value="abcd"` in iso field number 4. If field number 4 is activated and has an empty string, the field number 4 will have value `abcd` instead of an empty string.
 
 #### Reference [nucleus8583](https://github.com/robbik/nucleus8583/blob/master/wiki/Manual.wiki)

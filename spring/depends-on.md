@@ -2,13 +2,13 @@
 
 Spring, by default, manages beans' lifecycle and arranges their initialization order. But we can still customize it based on our needs. 
 
-> We can choose SmartLifeCycle interface or the @DependsOn annotation for managing intialization order.
+> We can choose SmartLifeCycle interface or the @DependsOn annotation for managing initialization order.
 
 ### Steps
 1. Add spring-context dependency.
 ```xml
 <dependency>
-  <groupId><org.springframework</groupId>
+  <groupId>org.springframework</groupId>
   <artifactId>spring-context</artifactId>
   <version>5.2.8.RELEASE</version>
 </dependency>
@@ -21,7 +21,7 @@ Let's say we have FileProcessor which  depends on  FileReader and FileWriter. In
 The configuration file is a pure Java class with @Configuration annotation
 ```java
 @Configuration
-@ComponentScan("com.sanjay.namdeo")
+@ComponentScan("com.my.package")
 public class Config {
   @Bean
   @DependsOn({"fileReader", "fileWriter"})
@@ -43,7 +43,7 @@ public class Config {
 
 **FileProcessor specifies its dependencies with @DependsOn**
 
-We an also annotate a component with @DependsOn
+We can also annotate a component with @DependsOn
 
 ```java
 @Component

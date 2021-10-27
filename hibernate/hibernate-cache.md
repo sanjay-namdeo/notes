@@ -1,17 +1,17 @@
 ## Hibernate Cache
-1. **First Level Cache**: Hibernate first level cache is associated with the Session object. Hibernate first level cache is enabled by default and there is no way to disable it. However hibernate provides methods through which we can delete selected objects from the cache or clear the cache completely.
+1. **First Level Cache**: Hibernate first level cache is associated with the Session object. Hibernate first level cache is enabled by default and there is no way to disable it. However, hibernate provides methods through which we can delete selected objects from the cache or clear the cache completely.
 > Any object cached in a session will not be visible to other sessions and when the session is closed, all the cached objects will also be lost.
-3. **Second Level Cache**: Hibernate Second Level cache is disabled by default but we can enable it through configuration. Currently EHCache and Infinispan provides implementation for Hibernate Second level cache and we can use them. We will look into this in the next tutorial for hibernate caching.
-4. **Query Cache**: Hibernate can also cache result set of a query. Hibernate Query Cache doesn’t cache the state of the actual entities in the cache; it caches only identifier values and results of value type. So it should always be used in conjunction with the second-level cache.
+3. **Second Level Cache**: Hibernate Second Level cache is disabled by default, but we can enable it through configuration. Currently, EHCache and Infinispan provides implementation for Hibernate Second level cache, and we can use them. We will look into this in the next tutorial for hibernate caching.
+4. **Query Cache**: Hibernate can also cache result set of a query. Hibernate Query Cache does not cache the state of the actual entities in the cache; it caches only identifier values and results of value type. So it should always be used in conjunction with the second-level cache.
 
 ### Hibernate First Level Cache
 1. Hibernate First Level cache is enabled by default, there are no configurations needed for this.
 2. Hibernate first level cache is *session specific*, that’s why when we are getting the same data in same session there is no query fired whereas in other session query is fired to load the data.
 > Once session is closed, first level cache is terminated as well.
 3. Hibernate first level cache can have old values.
-4. We can use session `evict()` method to remove a single object from the hibernate first level cache.
-5. We can use session `clear()` method to clear the cache i.e delete all the objects from the cache.
-6. We can use session `contains()` method to check if an object is present in the hibernate cache or not, if the object is found in cache, it returns true or else it returns false.
+4. We can use session `evict()` method to remove a single object from hibernate first level cache.
+5. We can use session `clear()` method to clear the cache i.e. delete all the objects from the cache.
+6. We can use session `contains()` method to check if an object is present in hibernate cache or not, if the object is found in cache, it returns true or else it returns false.
 7. Since hibernate cache all the objects into session first level cache, while running bulk queries or batch updates it’s necessary to clear the cache at certain intervals to avoid memory issues.
 > One session's cache is not visible to any other session. that's where we can use second level cache.
 
@@ -27,7 +27,7 @@ import com.journaldev.hibernate.util.HibernateUtil;
 
 public class HibernateCacheExample {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.getCurrentSession();
@@ -37,7 +37,7 @@ public class HibernateCacheExample {
         Employee emp = (Employee) session.load(Employee.class, new Long(1));
         printData(emp, 1);
 
-        //waiting for sometime to change the data in backend
+        //waiting for some time to change the data in backend
         Thread.sleep(10000);
 
         //Fetch same data again, check logs that no query fired

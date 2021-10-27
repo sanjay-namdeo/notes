@@ -2,7 +2,7 @@
 
 ### Authentication
 1. Implement an `authentication filter` to issue JWT to users sending credentials,
-2. Implement an `authorization filter` to validate requests containing JWTS,
+2. Implement an `authorization filter` to validate requests containing JWT,
 3. Create a custom implementation of UserDetailsService to help Spring Security loading user-specific data in the framework,
 4. Extend the `WebSecurityConfigurerAdapter` class to customize the security framework to our needs.
 
@@ -21,7 +21,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration 
 public class SecurityConfig extends WebSecurityConfigurerAdapter {     
         @Override     
-        protected void configure(HttpSecurity http) throws Exception {         
+        protected void configure(HttpSecurity http) {         
                 http.authorizeRequests()             
                 .antMatchers("/welcome").permitAll()             
                 .anyRequest().authenticated()             

@@ -1,4 +1,4 @@
-# Solid Priciples
+# Solid Principles
 
 ## 1. Single Responsibility
 A class should only have one responsibility. Furthermore, it should only have one reason to change.
@@ -69,7 +69,7 @@ public class Guitar {
     private int volume;
 }
 ```
-We launch the application, and everyone loves it. However, after a few months, we decide the Guitar is a little bit boring and could do with an awesome flame pattern to make it look a bit more ‘rock and roll’.
+We launch the application, and everyone loves it. However, after a few months, we decide the Guitar is a little boring and could do with an awesome flame pattern to make it look a bit more ‘rock and roll’.
 At this point, it might be tempting to just open up the Guitar class and add a flame pattern – but who knows what errors that might throw up in our application.
 
 Instead, let’s stick to the open-closed principle and simply extend our Guitar class:
@@ -154,9 +154,9 @@ public class BearCarer implements BearCleaner, BearFeeder {
     public void feedTheBear() {
     }
 }
-
+```
 And finally, we can leave the dangerous stuff to the crazy people:
-
+```java
 public class CrazyPerson implements BearPetter {
     public void petTheBear() {
     }

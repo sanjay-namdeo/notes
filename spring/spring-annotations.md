@@ -4,9 +4,11 @@
 Indicates that the annotated *bean must be populated at configuration time with the required property*, else it throws BeanInitializationException.
 
 ```java
-@Required
-public void setName(String name) {
-    this.name = name;
+public class Person {
+    @Required
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 ```
 
@@ -14,8 +16,10 @@ public void setName(String name) {
 Spring provides annotation-based auto-wiring by providing @Autowired annotation. Autowiring a bean is done by matching data-type.
 
 ```java
-@Autowired
-private Customer customer;
+public class Person {
+    @Autowired
+    private Customer customer;
+}
 ```
 
 ### Configuration
@@ -32,29 +36,33 @@ public class Vehicle {
 ```
 
 ### ComponentScan
-**To scan a packge for beans** It is used with @Configuration annotation. We can specify the base package to scan for Spring components.
+**To scan a package for beans** It is used with @Configuration annotation. We can specify the base package to scan for Spring components.
 
 ```java
-@ComponentScan(basePackages = "com.mypackage")
+@ComponentScan(basePackages = "com.package")
 @Configuration
 public class ScanComponent {
+    
+}
 ```
 
 ### Bean
 It is a method-level annotation. Alternative to XML <bean> tag. It tells the *method to produce a bean* to be managed by Spring container.
 
 ```java
-@Bean
-public BeanExample beanExample() {
-    return new BeanExample();
+public class Person {
+    @Bean
+    public BeanExample beanExample() {
+        return new BeanExample();
+    }
 }
 ```
 
-### Steretype Annotations
+### Stereotype Annotations
 *@Component* marks the class as Bean. Class is found in class path and then pick up by Spring which configure it in application context as Spring Bean.
 *@Controller* marks the class as bean and used web request handler
 *@Service* marks the class as bean and used for business logic
-*@Repository* marks the class a repository of DAOs(Data Access Object) that access the database directory. The respository contains all the operations related to the database.
+*@Repository* marks the class a repository of DAOs(Data Access Object) that access the database directory. The repository contains all the operations related to the database.
 
 ### Spring Boot Annotations
 *@EnableAutoConfiguration* It auto-configures the bean that is present in classpath and configures it to run the methods.
@@ -69,11 +77,11 @@ public BeanExample beanExample() {
 *@PutMapping* for HTTP PUT
 *@DeleteMapping* for HTTP DELETE
 *@PatchMapping* for HTTP PATCH
-*@RequestBody* to bind HTTP request with an object in a method parameter. Binds the incoming HTTP request body to that parameter.
+*@RequestBody* to bind HTTP requests with an object in a method parameter. Binds the incoming HTTP request body to that parameter.
 *@ResponseBody* binds the method return value to the response body. It tells Spring to serialize an object into JSON or XML format.
 
 *@RequestParam* to extract the query parameters from the URL.
-*@PathVariable* to extact the values from the URI
+*@PathVariable* to extract the values from the URI
 
 *@RequestHeader* to get the details of HTTP request headers.
 *@RestController* it is a combination of @Controller and @ResponseBody

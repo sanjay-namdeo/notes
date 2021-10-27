@@ -1,10 +1,10 @@
 ## Rest Specification
 ### URI Construction
-RESTful APIs use Uniform Resource Identifiers (URIs) to address resources, ONAP projects should comply with a unified URI standard to implement the microservices.
+REST-ful APIs use Uniform Resource Identifiers (URIs) to address resources, ONAP projects should comply with a unified URI standard to implement the microservices.
 1. URI structure (Mandatory)
-URI structure http://[host]:[port]/api/{service name}]/v{version number}/{resource}
-The URI is comprised of a fixed base uri /api/{service name}]/v{version number} and the resource path. Only major version number is used in the URI. An example: http://127.0.0.1:8080/api/petstore/v1/pets/dogs
-2. CRUD function names should not be used in URIs. Instead, CRUD actions should be represented by HTTP methods. Below is the proposed methodology to implement CRUD operations in a RESTful API. (Recommended)
+URI structure http://[host]:[port]/api/{service name}/v{version number}/{resource}
+The URI comprises a fixed base uri /api/{service name}/v{version number} and the resource path. Only major version number is used in the URI. An example: http://127.0.0.1:8080/api/petstore/v1/pets/dogs
+2. CRUD function names should not be used in URIs. Instead, CRUD actions should be represented by HTTP methods. Below is the proposed methodology to implement CRUD operations in a REST-ful API. (Recommended)
 ```
 *api/petstore/v1/pets/dogs*
 *POST* creates a new dog
@@ -34,7 +34,7 @@ Ideally, microservices should be stateless so the service instances can be scale
 ```
 
 ### Status codes
-|Resonse Code|Response Summary|Response Description|
+|Response Code|Response Summary|Response Description|
 |---|---|---|
 |200|OK|Everything is working|
 |201|OK|New resource has been created|
@@ -45,4 +45,4 @@ Ideally, microservices should be stateless so the service instances can be scale
 |403|Forbidden|The server understood the request but is refusing it or the access is not allowed.|
 |404|Not found|There is no resource behind the URI.|
 |422|Unprocessable Entity|Should be used if the server cannot process the entity, e.g. if an image cannot be formatted or mandatory fields are missing in the payload.|
-|500|Internal Server Error|API developers should avoid this error. If an error occurs in the global catch blog, the stracktrace should be logged and not returned as in the response.|
+|500|Internal Server Error|API developers should avoid this error. If an error occurs in the global catch blog, the stacktrace should be logged and not returned as in the response.|
