@@ -1,11 +1,11 @@
-## Immutable Class
+# Immutable Class
 
 Once an object of an immutable class is created, it cannot be modified.
 
 > All Wrapper classes are immutable like String, Integer, Byte, Short, Boolean
 
-Following are the requirements to create an immutable class
 
+## How to create an immutable class
 1. The **class must be declared as final** so that child classes can't be created
 2. **Data member must be private** so that direct access is not possible
 3. **Data member must be final** so that we can't change the value of the after it is created
@@ -15,6 +15,7 @@ Following are the requirements to create an immutable class
    object reference
 6. **No setters** so that there is no option to change the value fields
 
+## Example
 ```java
 import java.util.HashMap;
 import java.util.Map;
