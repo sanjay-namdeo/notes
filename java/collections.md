@@ -1,16 +1,20 @@
-### Primary Interfaces
-1. public interface *Collection* extends Iterable
-2. public interface *List* extends Collection<E>
-3. public interface *Set* extends Collection<E>
-4. public interface *Queue* extends Collection<E>
+# Java Collection
 
-### Hashmap vs ConcurrentHashMap
-1. HashMap is the Class which is under Traditional Collection and ConcurrentHashMap is a Class which is under Concurrent Collections
-2. HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature.
-3. HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap.
-4. *HashMap iterator is fail-fast* and throws ConcurrentModificationException if concurrent modification happens during iteration. *ConcurrentHashMap is fail-safe* and it will never throw ConcurrentModificationException during iteration.
+## Primary Interfaces
+1. public interface `Collection` extends `Iterable`
+2. public interface `List` extends `Collection<E>`
+3. public interface `Set` extends `Collection<E>`
+4. public interface `Queue` extends `Collection<E>`
 
-### ConcurrentHashMap
+## Hashmap vs ConcurrentHashMap
+|HashMap|ConcurrentHashMap|
+|---|---|
+|HashMap is the Class which is under Traditional `Collection`|`ConcurrentHashMap` is a Class which is under `Concurrent Collections`|
+|HashMap is non-Synchronized in nature i.e. HashMap is `not Thread-safe`|ConcurrentHashMap is `Thread-safe` in nature|
+|HashMap `performance is relatively high` because it is non-synchronized in nature and any number of threads can perform simultaneously|ConcurrentHashMap `performance is low` sometimes because sometimes Threads are required to wait on ConcurrentHashMap.|
+|HashMap iterator is `fail-fast` and throws ConcurrentModificationException if concurrent modification happens during iteration|ConcurrentHashMap is `fail-safe` and it will never throw ConcurrentModificationException during iteration.|
+
+## ConcurrentHashMap
 1. You should use ConcurrentHashMap when you need very high concurrency in your project.
 2. It is thread safe without synchronizing the whole map.
 3. Reads can happen very fast while write is done with a lock.
@@ -19,7 +23,7 @@
 6. ConcurrentHashMap does not throw a ConcurrentModificationException if one thread tries to modify it while another is iterating over it.
 7. ConcurrentHashMap uses multitude of locks.
 
-### SynchronizedHashMap
+## SynchronizedHashMap
 1. Synchronization at Object level.
 2. Every read/write operation needs to acquire lock.
 3. Locking the entire collection is a performance overhead.
