@@ -1,9 +1,9 @@
-## Polymorphism
+# Polymorphism
 
 An ability to exist in multiple forms. It allows to perform a single operation in different ways.
 
-### Compile-time
-Also known as static binding. Achieved by function overloading and operator overloading. Java doesn't support operator
+## Compile-time
+Also known as `Static binding`. Achieved by `function overloading and operator overloading`. Java doesn't support operator
 overloading.
 
 ```java
@@ -18,8 +18,8 @@ class MultiplyFun {
 }
 ```
 
-### Runtime
-Also known as Dynamic binding OR Dynamic method dispatch. Function calls to overridden method is resolved at Runtime.
+## Run-time
+Also known as `Dynamic binding` OR Dynamic method dispatch. Function calls to `overridden method` is resolved at Runtime.
 
 ```java
 class Parent {
