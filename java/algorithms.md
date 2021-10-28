@@ -1,6 +1,6 @@
-## Algorithms in Java
+# Algorithms in Java
 
-1. Left Rotate An Array by n places
+## Left Rotate An Array by n places
 
 ```java
 class Scratch {
@@ -23,7 +23,7 @@ class Scratch {
 }
 ```
 
-2. Right Rotate an Array by n places
+## Right Rotate an Array by n places
 
 ```java
 public class Scratch {
@@ -46,7 +46,7 @@ public class Scratch {
 }
 ```
 
-3. Reverse a String
+## Reverse a String
 
 ```java
 public class Scratch {
@@ -62,7 +62,7 @@ public class Scratch {
 }
 ```
 
-4. Swap two numbers without using a third variable
+## Swap two numbers without using a third variable
 
 ```java
 public class Scratch {
@@ -78,7 +78,7 @@ public class Scratch {
 }
 ```
 
-5. Check if a vowel is present in the string
+## Check if a vowel is present in the string
 
 ```java
 public class Scratch {
@@ -88,7 +88,7 @@ public class Scratch {
 }
 ```
 
-6. Check if the given number is Prime?
+## Check if the given number is Prime?
 
 ```java
 public class Scratch {
@@ -109,7 +109,7 @@ public class Scratch {
 }
 ```
 
-7. Palindrome Check
+## Palindrome Check
 
 ```java
 public class Scratch {
@@ -127,7 +127,7 @@ public class Scratch {
 }
 ```
 
-8. Factorial of an integer
+## Factorial of an integer
 
 ```java
 public class Scratch {
@@ -140,7 +140,7 @@ public class Scratch {
 }
 ```
 
-9. Binary Search
+## Binary Search
 
 ```java
 public class Scratch {
@@ -165,7 +165,7 @@ public class Scratch {
 }
 ```
 
-10. Find second-largest number in an array
+## Find second-largest number in an array
 
 ```java
 public class Scratch {
@@ -187,7 +187,7 @@ public class Scratch {
 }
 ```
 
-11. Sort HashMap by values
+## Sort HashMap by values
 
 ```java
 public class Scratch {
@@ -214,7 +214,7 @@ public class Scratch {
 }
 ```
 
-12. Get distinct characters and their count in a String?
+## Get distinct characters and their count in a String?
 
 ```java
 public class Scratch {
@@ -237,7 +237,7 @@ public class Scratch {
 }
 ```
 
-13. Prove String is immutable programmatically?
+## Prove String is immutable programmatically?
 
 ```java
 public class Scratch {
