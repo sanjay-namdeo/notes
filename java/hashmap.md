@@ -1,13 +1,16 @@
+# Hashmap
+Java HashMap is a `hash table based implementation` of Java's `Map interface`. A Map, as you might know, is a collection of `key-value pairs`. It maps keys to values. HashMap is an `unordered` collection. It does not guarantee any specific order of the elements
+
 ## Hashing
-> Process of **converting an object into integer form by using the method hashCode()**.
+Process of converting an object into integer form by using the method `hashCode()`.
 
 ## hashCode()
-hashCode() method is used to get the hash Code of an object. hashCode() method of object class returns the memory reference of object in integer form. Definition of hashCode() method is public native hashCode(). It indicates the implementation of hashCode() is native because there is not any direct method in java to fetch the reference of object. It is possible to provide your own implementation of hashCode().
+`hashCode()` method is used to get the hash Code of an object. `hashCode()` method of object class returns the memory reference of object in integer form. Definition of `hashCode()` method is `public native hashCode()`. It indicates the implementation of `hashCode()` is native because there is not any direct method in java to fetch the reference of object. It is possible to provide your own implementation of hashCode().
 >In HashMap, hashCode() is used to calculate the bucket and therefore calculate the index.
 
 ## equals()
-equals() is used to check that 2 objects are equal or not. This method is provided by Object class. You can override this in your class to provide your own implementation.
-/HashMap uses equals() to compare the key whether they are equal or not. If equals() method return true, they are equal otherwise not equal./
+`equals(`) is used to check that 2 objects are equal or not. This method is provided by Object class. You can override this in your class to provide your own implementation.
+**HashMap uses equals() to compare the key whether they are equal or not. If equals() method return true, they are equal otherwise not equal.**
 
 > It is generally necessary to override the hashCode() method whenever equals() method is overridden, to maintain the general contract for the hashCode() method, which states that equal objects must have equal hash codes.
 
