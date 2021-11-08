@@ -54,7 +54,8 @@ Note that Java 8's default methods are not abstract and do not count; a function
 1. `Predicate <T>`: interface is a functional interface with a method test(Object) to return a Boolean value. This interface signifies that an object is tested to be true or false.
 2. `Suppliers`: The Supplier functional interface is yet another Function specialization that does not take any arguments. We typically use it for lazy generation of values. For instance, let's define a function that squares a double value. It will not receive a value itself, but a Supplier of this value:
 3. `Consumers`: As opposed to the Supplier, the Consumer accepts a generified argument and returns nothing. It is a function that is representing side effects.
-4. `BiConsumer`: It represents a function that takes in two arguments and produces a result. However, these kinds of functions doesn’t return any value.
+4. `Optional`: The purpose of the class is to provide a type-level solution for representing optional values instead of null references.
+5. `BiConsumer`: It represents a function that takes in two arguments and produces a result. However, these kinds of functions doesn’t return any value.
 ```java
 // Create the first list
 List<Integer> lista = new ArrayList<Integer>();
