@@ -54,6 +54,38 @@ Note that Java 8's default methods are not abstract and do not count; a function
 1. `Predicate <T>`: interface is a functional interface with a method test(Object) to return a Boolean value. This interface signifies that an object is tested to be true or false.
 2. `Suppliers`: The Supplier functional interface is yet another Function specialization that does not take any arguments. We typically use it for lazy generation of values. For instance, let's define a function that squares a double value. It will not receive a value itself, but a Supplier of this value:
 3. `Consumers`: As opposed to the Supplier, the Consumer accepts a generified argument and returns nothing. It is a function that is representing side effects.
+4. `BiConsumer`: It represents a function that takes in two arguments and produces a result. However, these kinds of functions doesn’t return any value.
+```java
+// Create the first list
+List<Integer> lista = new ArrayList<Integer>();
+lista.add(2);
+lista.add(1);
+lista.add(3);
+
+// Create the second list
+List<Integer> listb = new ArrayList<Integer>();
+listb.add(2);
+listb.add(1);
+listb.add(2);
+
+// BiConsumer to compare both lists
+BiConsumer<List<Integer>, List<Integer> >
+    equals = (list1, list2) ->
+{
+    if (list1.size() != list2.size()) {
+        System.out.println("False");
+    }
+    else {
+        for (int i = 0; i < list1.size(); i++)
+            if (list1.get(i) != list2.get(i)) {
+                System.out.println("False");
+                return;
+            }
+        System.out.println("True");
+    }
+};
+equals.accept(lista, listb);
+```
 
 ## Stream API
 One of the major new features in Java 8 is the introduction of the stream functionality – `java.util.stream` – which contains classes for processing sequences of elements.
