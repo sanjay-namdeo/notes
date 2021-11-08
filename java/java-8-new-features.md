@@ -50,6 +50,10 @@ String overview = vehicle.getOverview();
 It's recommended that all functional interfaces have an informative @FunctionalInterface annotation. This clearly communicates the purpose of the interface, and also allows a compiler to generate an error if the annotated interface does not satisfy the conditions.
 
 Note that Java 8's default methods are not abstract and do not count; a functional interface may still have multiple default methods. We can observe this by looking at the Function's documentation.
+### Example
+1. `Predicate <T>`: interface is a functional interface with a method test(Object) to return a Boolean value. This interface signifies that an object is tested to be true or false.
+2. `Suppliers`: The Supplier functional interface is yet another Function specialization that does not take any arguments. We typically use it for lazy generation of values. For instance, let's define a function that squares a double value. It will not receive a value itself, but a Supplier of this value:
+3. `Consumers`: As opposed to the Supplier, the Consumer accepts a generified argument and returns nothing. It is a function that is representing side effects.
 
 ## Stream API
 One of the major new features in Java 8 is the introduction of the stream functionality – `java.util.stream` – which contains classes for processing sequences of elements.
