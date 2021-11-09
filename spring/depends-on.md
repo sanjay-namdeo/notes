@@ -2,7 +2,7 @@
 
 Spring, by default, manages beans' lifecycle and arranges their initialization order. But we can still customize it based on our needs. 
 
-> We can choose SmartLifeCycle interface or the @DependsOn annotation for managing initialization order.
+**We can choose SmartLifeCycle interface or the `@DependsOn` annotation for managing initialization order.**
 
 ### Steps
 1. Add spring-context dependency.
