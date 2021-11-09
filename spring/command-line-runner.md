@@ -17,3 +17,6 @@ The SpringApplication class then fires up a Spring container and auto-configures
 Notice we must pass a configuration class to the run method to work as the primary configuration source. By convention, this argument is the entry class itself.
 
 After calling the run method, we can execute other statements as in a regular program.
+
+## @SpringBootApplication
+**@SpringBootApplication = @Configuration + @ComponentScan + @EnableAutoConfiguration**
