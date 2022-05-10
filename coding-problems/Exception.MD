@@ -1,4 +1,5 @@
 **Output** - Exception IOException is not compatible with throws clause in Parent.hello()
+
 ```java
 class Parent {
     public void hello() {
@@ -12,8 +13,10 @@ class Child extends Parent {
     }
 }
 ```
+
 ---
 **Output** - Runtime exception
+
 ```java
 public class Demo {
     public static void method1() {
@@ -26,6 +29,29 @@ public class Demo {
 
     public static void main(String[] args) {
         method1();
+    }
+}
+```
+
+---
+**Output** - Unreachable Code
+
+```java
+public class Demo {
+    public static int method1() {
+        try {
+            throw new ArithmeticException();
+            return 1;
+        } catch (Exception e) {
+            return 2;
+        } finally {
+            return 3;
+        }
+    }
+
+    public static void main(String[] args) {
+        int result = method1();
+        System.out.println(result);
     }
 }
 ```
