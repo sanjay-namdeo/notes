@@ -141,3 +141,48 @@ public class Demo {
     }
 } 
 ```
+
+---
+**Output** - Cannot make a static reference to the non-static field a
+
+```java
+class OuterClass {
+    int a = 10;
+    static int b = 20;
+    private static int c = 30;
+
+    static class InnerClass {
+        void print() {
+            System.out.println("Outer class a : " + a);
+            System.out.println("Outer class b : " + b);
+            System.out.println("Outer class c : " + c);
+        }
+    }
+}
+```
+---
+**Output** - <br/>outer_x : 10<br/>outer_y : 20<br/>outer_z : 30<br/>
+
+```java
+class OuterClass {
+    static int outer_x = 10;
+    int outer_y = 20;
+    private int outer_z = 30;
+
+    class InnerClass {
+        void print() {
+            System.out.println("outer_x : " + outer_x);
+            System.out.println("outer_y : " + outer_y);
+            System.out.println("outer_z : " + outer_z);
+        }
+    }
+}
+
+class Scratch {
+    public static void main(String[] args) {
+        OuterClass outerClass = new OuterClass();
+        OuterClass.InnerClass innerClass = outerClass.new InnerClass();
+        innerClass.print();
+    }
+}
+```
