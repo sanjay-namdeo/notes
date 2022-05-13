@@ -1,23 +1,19 @@
 public class Singleton {
     public static void main(String[] args) {
-        System.out.println(Log.getInstanse());
-        System.out.println(Log.getInstanse());
+        System.out.println(Log.getInstance());
+        System.out.println(Log.getInstance());
     }
 }
 
 class Log {
-    static class InnerClass {
-        private static Log log;
-
-        private static Log getInstanse() {
-            if (log == null) {
-                log = new Log();
-            }
-            return log;
-        }
+    private Log() {
     }
 
-    public static Log getInstanse() {
-        return InnerClass.getInstanse();
+    private static class InnerLog {
+        private static final Log instance = new Log();
+    }
+
+    public static Log getInstance() {
+        return InnerLog.instance;
     }
 }
