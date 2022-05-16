@@ -7,7 +7,7 @@ public class Permutation {
 
     private static void generatePermutations(String string) {
         printPermutations("", string);
-        // printPermutationsJava8("", string);
+        printPermutationsJava8("", string);
     }
 
     private static void printPermutations(String prefix, String input) {
