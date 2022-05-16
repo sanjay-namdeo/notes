@@ -1,6 +1,10 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class RemoveDuplicateChar {
     public static void main(String[] args) {
         System.out.println(removeDuplicateChar("Sanjay"));
+        System.out.println(removeDuplicateCharJava8("Sanjay"));
     }
 
     private static String removeDuplicateChar(String string) {
@@ -15,5 +19,9 @@ public class RemoveDuplicateChar {
             }
         }
         return sb.toString();
+    }
+
+    private static String removeDuplicateCharJava8(String string) {
+        return Arrays.asList(string.split("")).stream().distinct().collect(Collectors.joining());
     }
 }
