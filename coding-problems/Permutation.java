@@ -3,19 +3,18 @@ public class Permutation {
         generatePermutations("ABC");
     }
 
-    private static void generatePermutations(String input) {
-        permutePrint("", input);
+    private static void generatePermutations(String string) {
+        printPermutations("", string);
     }
 
-    private static void permutePrint(String prefix, String str) {
-        int n = str.length();
+    private static void printPermutations(String prefix, String input) {
+        int n = input.length();
 
         if (n == 0) {
-            System.out.println(prefix + " ");
+            System.out.println(prefix);
         } else {
             for (int i = 0; i < n; i++) {
-                permutePrint(prefix + str.charAt(i), str.substring(i + 1, n)
-                        + str.substring(0, i));
+                printPermutations(prefix + input.charAt(i), input.substring(i + 1, n) + input.substring(0, i));
             }
         }
     }
