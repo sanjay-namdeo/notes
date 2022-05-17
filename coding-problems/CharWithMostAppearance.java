@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Map.Entry;
 import java.util.OptionalInt;
 import java.util.stream.Collectors;
@@ -8,19 +9,20 @@ public class CharWithMostAppearance {
     public static void main(String[] args) {
         String input = "Sanjay";
         // By conventional methods
-        System.out.println(charWithMostAppearance(""));
+        System.out.println(charWithMostAppearance(input));
 
         // By java 8
-        System.out.println(input
-                .chars()
-                .filter(c -> Character.isWhitespace(c) == false)
-                .mapToObj(c -> (char) c)
-                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
-                .entrySet()
-                .stream()
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey));
-        ;
+        Optional<Character> mostAppear = input
+                .chars() // Convert String to character
+                .mapToObj(c -> (char) c) // Convert char to Character
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting())) // Map of Character, and it's count
+                .entrySet() // Get all entries of the map
+                .stream() // stream over map entries
+                .max(Entry.comparingByValue()) // get max value from the map
+                .map(Entry::getKey); // get the key of the max value entry
+        if (mostAppear.isPresent()) {
+            System.out.println(mostAppear.get());
+        }
     }
 
     private static Character charWithMostAppearance(String string) {
