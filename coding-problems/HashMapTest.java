@@ -28,14 +28,15 @@ class Employee {
 
     @Override
     public boolean equals(Object obj) {
+        if (obj == this)
+            return true;
         if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
             return false;
 
         Employee emp = (Employee) obj;
-
-        if (emp == this) {
-            return true;
-        } else if (this.id == emp.id && this.name.equals(emp.name)) {
+        if (this.id == emp.id && this.name.equals(emp.name)) {
             return true;
         }
 
@@ -44,6 +45,9 @@ class Employee {
 
     @Override
     public int hashCode() {
-        return (int) (this.id * this.name.hashCode());
+        int primeNumber = 31;
+        int result = 1;
+        result = primeNumber + result * (name != null ? name.hashCode() : 0);
+        return result;
     }
 }
